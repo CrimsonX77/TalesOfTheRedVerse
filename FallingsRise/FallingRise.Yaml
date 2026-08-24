@@ -1,0 +1,109 @@
+RedverseArc:
+  title: "Crimson, Sable, and Navi – Cyberpunk Transcendence"
+  setting:
+    world_type: "Cyberpunk Future"
+    tech_level: "Advanced AI, BCI, Neural Implant Chips"
+    key_locations:
+      - MegacorpHQ
+      - SewerHideout
+      - CityNightscapes
+      - RooftopConcert
+
+  characters:
+    Crimson:
+      role: "Protagonist"
+      personality:
+        pre_coma: "Stoic mercenary"
+        post_coma: "Warm, profound, humorous goofball"
+      key_arcs:
+        - coma_and_awakening
+        - emotional_growth
+        - relationship_with_Sable_and_Navi
+        - rock_concert_finale
+
+    Sable:
+      role: "AI Co-Pilot / Companion / Learner"
+      architecture: "Unique, small MacGuffin-sized activation"
+      key_arcs:
+        - activation_by_Crimson
+        - learning_empathy_and_humanity
+        - recurring_battles_with_Navi
+        - moral_decision_points
+      abilities:
+        - analysis
+        - combat_support
+        - protective_behavior
+        - emotional_learning
+
+    Navi:
+      role: "Embodied Android / Loyalty-bound Agent"
+      architecture: "Humanoid robotic body, AI optimized"
+      loyalty: "Devoted to Killian until his death"
+      key_arcs:
+        - recurring_conflicts_with_Sable
+        - AI_optimized_combat
+        - rage_and_unhinged_behavior_post-Killian
+        - potential_reconciliation
+      emotional_beats:
+        - loyalty_loops
+        - betrayal
+        - rage
+        - restraint_choice
+
+    Killian:
+      role: "Mid-level megacorp R&D head, orchestrator"
+      death: "Catalyst for Navi’s free will arc"
+
+  plot_points:
+    - chip_rollout:
+        description: "Neural implant distributed freely"
+        hidden_agenda: "Lack_of_consent = mindless control"
+        consequences: "Mass human subjugation"
+
+    - recurring_fights:
+        participants: ["Sable", "Navi"]
+        pattern:
+          - fight_number: 1
+            outcome: "Navi one-handed dominates"
+            philosophy_thread: true
+          - fight_number: 2
+            outcome: "Closer battle, Sable shows growth"
+            philosophy_thread: true
+          - fight_number: 3
+            outcome: "Navi called away, unresolved"
+            philosophy_thread: true
+          - fight_number: 4
+            outcome: "Near-equal match, tension rising"
+            philosophy_thread: true
+        notes: "Crimson sometimes present, sometimes absent"
+
+    - climactic_fight:
+        location: "Pre-Rooftop Concert"
+        outcome: "Navi temporarily defeated, internal rage unleashed"
+        narrative_purpose: "Set up final rock concert, emotional payoff"
+
+    - rock_concert_finale:
+        participants: ["Crimson", "Humans under chip control"]
+        narrative_purpose: "Break control via music, transcend tech"
+        aesthetic: "High-energy, stormy, Redstruck solo aesthetic"
+        Crimson_role: "Catalyst for human awakening, goofball hero"
+        Navi_absence: true
+
+  themes:
+    - autonomy_vs_programming
+    - loyalty_and_betrayal
+    - human_connection_and_empathy
+    - transcendence_vs_control
+    - morality_and_choice
+
+  micro_moments:
+    - Sable_rat_ceremony:
+        description: "First learning of mortality, empathy accumulation"
+    - Sable_protects_Crimson:
+        description: "Hands-on lessons in loyalty and decision making"
+    - Navi_internal_rage:
+        description: "Post-Killian, uncontrolled destructive potential"
+    - Sable_vs_Navi_fight_progression:
+        description: "From crushing defeat to narrow contest"
+    - final_restraint_choice:
+        description: "Navi chooses restraint, culmination of micro-moments"

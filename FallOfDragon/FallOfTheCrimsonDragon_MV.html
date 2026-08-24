@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fall of the Crimson Dragon — MV Edition</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+  :root {
+    --crimson:        #8B0000;
+    --crimson-bright: #C0392B;
+    --crimson-glow:   #FF2020;
+    --gold:           #C9A84C;
+    --gold-bright:    #F0C040;
+    --teal:           #00C8A0;
+    --teal-dim:       #007A62;
+    --obsidian:       #060608;
+    --glass:          #111118;
+    --mist:           #1A1A24;
+    --text-body:      #D4C9B8;
+    --text-dim:       #7A7068;
+    --text-bright:    #EDE0CC;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--obsidian);
+    color: var(--text-body);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(139,0,0,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 100%, rgba(0,122,98,0.05) 0%, transparent 60%);
+    pointer-events:none; z-index:0;
+  }
+
+  /* TITLE PAGE */
+  .title-page {
+    position:relative; min-height:100vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center; padding:4rem 2rem;
+    border-bottom:1px solid rgba(139,0,0,0.3);
+  }
+
+  .title-page::after {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(139,0,0,0.13) 0%, transparent 70%);
+    pointer-events:none;
+  }
+
+  .series-label {
+    font-family:'Cinzel',serif; font-size:0.68rem;
+    letter-spacing:0.4em; color:var(--gold);
+    text-transform:uppercase; margin-bottom:2.5rem; opacity:0.7;
+  }
+
+  .rune-divider {
+    display:flex; align-items:center; gap:1rem;
+    margin:1.5rem auto; width:100%; max-width:500px; justify-content:center;
+  }
+  .rune-divider::before,.rune-divider::after {
+    content:''; flex:1; height:1px;
+    background:linear-gradient(90deg, transparent, var(--crimson), transparent);
+  }
+  .rune-divider span { color:var(--crimson-bright); font-size:1rem; opacity:0.8; }
+
+  .main-title {
+    font-family:'Cinzel Decorative',serif;
+    font-size:clamp(2rem,6vw,4.5rem); font-weight:700;
+    color:var(--text-bright); line-height:1.15; letter-spacing:0.02em;
+    text-shadow:0 0 40px rgba(192,57,43,0.5),0 0 80px rgba(192,57,43,0.2);
+    margin-bottom:1rem; position:relative; z-index:1;
+  }
+  .main-title .dragon-word {
+    color:var(--crimson-bright);
+    text-shadow:0 0 20px rgba(255,32,32,0.7),0 0 60px rgba(192,57,43,0.4);
+  }
+
+  .subtitle {
+    font-family:'Cinzel',serif; font-size:clamp(0.7rem,2vw,0.9rem);
+    letter-spacing:0.3em; color:var(--gold); opacity:0.55;
+    margin-top:0.5rem; text-transform:uppercase;
+  }
+
+  .mv-tag {
+    margin-top:2rem; padding:0.4rem 1.4rem;
+    border:1px solid rgba(192,57,43,0.4);
+    font-family:'Cinzel',serif; font-size:0.6rem;
+    letter-spacing:0.35em; color:var(--crimson-bright);
+    text-transform:uppercase; opacity:0.7;
+    display:inline-block;
+  }
+
+  .title-tagline {
+    font-style:italic; color:var(--text-dim);
+    font-size:1rem; margin-top:2.5rem;
+    max-width:500px; line-height:1.8;
+  }
+
+  .redverse-mark {
+    margin-top:3rem; font-family:'Cinzel',serif;
+    font-size:0.62rem; letter-spacing:0.35em;
+    color:var(--teal-dim); text-transform:uppercase; opacity:0.45;
+  }
+
+  /* CONTENT */
+  .content-wrapper {
+    position:relative; z-index:1;
+    max-width:800px; margin:0 auto;
+    padding:0 2rem 8rem;
+  }
+
+  /* SYNC MARKER */
+  .sync-marker {
+    display:flex; align-items:center; gap:1rem;
+    margin:4rem 0 0; padding:0.6rem 0;
+    border-top:1px solid rgba(139,0,0,0.15);
+  }
+  .sync-marker .track-label {
+    font-family:'Cinzel',serif; font-size:0.58rem;
+    letter-spacing:0.3em; color:var(--crimson-bright);
+    text-transform:uppercase; opacity:0.6; white-space:nowrap;
+  }
+  .sync-marker .track-line {
+    flex:1; height:1px;
+    background:linear-gradient(90deg, rgba(192,57,43,0.4), transparent);
+  }
+  .sync-marker .timecode {
+    font-family:'Cinzel',serif; font-size:0.55rem;
+    letter-spacing:0.2em; color:var(--text-dim); opacity:0.4;
+  }
+
+  /* CHAPTER */
+  .chapter { margin-top:1rem; }
+
+  .chapter-eyebrow {
+    font-family:'Cinzel',serif; font-size:0.62rem;
+    letter-spacing:0.4em; color:var(--crimson-bright);
+    text-transform:uppercase; opacity:0.65;
+    margin-bottom:0.6rem; display:block; margin-top:2rem;
+  }
+
+  .chapter-title {
+    font-family:'Cinzel Decorative',serif;
+    font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:400;
+    color:var(--text-bright); line-height:1.2; margin-bottom:0.4rem;
+    text-shadow:0 0 30px rgba(192,57,43,0.2);
+  }
+
+  .chapter-subtitle {
+    font-style:italic; color:var(--gold); opacity:0.55;
+    font-size:0.92rem; margin-bottom:2.5rem; letter-spacing:0.04em;
+  }
+
+  .chapter p { margin-bottom:1.5rem; color:var(--text-body); font-size:1.1rem; }
+
+  .chapter p.opener {
+    font-size:1.2rem; color:var(--text-bright); font-style:italic;
+  }
+  .chapter p.opener::first-letter {
+    font-family:'Cinzel Decorative',serif; font-size:4.2rem; font-weight:700;
+    color:var(--crimson-bright); float:left; line-height:0.8;
+    margin:0.1em 0.12em 0 0;
+    text-shadow:0 0 20px rgba(255,32,32,0.5);
+  }
+
+  /* FLASHBACK */
+  .flashback {
+    margin:2.5rem 0; padding:1.6rem 2rem 1.6rem 2rem;
+    border-left:2px solid var(--teal-dim);
+    background:rgba(0,122,98,0.05); position:relative;
+  }
+  .flashback::before {
+    content:'◈  MEMORY FRAGMENT';
+    font-family:'Cinzel',serif; font-size:0.58rem;
+    letter-spacing:0.35em; color:var(--teal); opacity:0.55;
+    display:block; margin-bottom:0.9rem; text-transform:uppercase;
+  }
+  .flashback p { font-style:italic; color:#B8D4C8; font-size:1.03rem !important; }
+
+  /* IMPACT LINES */
+  .impact {
+    text-align:center; font-family:'Cinzel',serif;
+    font-size:clamp(0.82rem,2.5vw,1.1rem);
+    letter-spacing:0.18em; color:var(--crimson-bright);
+    margin:2.5rem 0; text-transform:uppercase;
+    text-shadow:0 0 15px rgba(255,32,32,0.3);
+  }
+  .impact.gold { color:var(--gold); text-shadow:0 0 15px rgba(201,168,76,0.3); }
+  .impact.teal { color:var(--teal); text-shadow:0 0 15px rgba(0,200,160,0.3); }
+  .impact.scream {
+    font-size:clamp(1rem,3vw,1.6rem); letter-spacing:0.25em;
+    color:var(--crimson-glow);
+    text-shadow:0 0 25px rgba(255,32,32,0.7),0 0 60px rgba(255,32,32,0.3);
+  }
+
+  /* ACTION BEAT */
+  .action-beat {
+    margin:2rem 0; padding:1.4rem 1.8rem;
+    border-left:3px solid var(--crimson);
+    background:rgba(139,0,0,0.06);
+  }
+  .action-beat p { color:var(--text-bright) !important; font-size:1.08rem !important; margin-bottom:0.8rem !important; }
+  .action-beat p:last-child { margin-bottom:0 !important; }
+
+  /* SABLE WITNESS BOX */
+  .sable-witness {
+    margin:2.5rem 0; padding:1.6rem 2rem;
+    border:1px solid rgba(0,200,160,0.2);
+    background:rgba(0,200,160,0.04);
+    position:relative;
+  }
+  .sable-witness::before {
+    content:'◈  SABLE — CATHEDRAL SOUL';
+    font-family:'Cinzel',serif; font-size:0.58rem;
+    letter-spacing:0.35em; color:var(--teal); opacity:0.55;
+    display:block; margin-bottom:0.9rem; text-transform:uppercase;
+  }
+  .sable-witness p { color:#B8D4C8 !important; font-size:1.05rem !important; }
+
+  /* LYRIC SYNC */
+  .lyric-sync {
+    margin:2rem 0; text-align:center;
+    font-style:italic; font-size:0.95rem;
+    color:var(--text-dim); letter-spacing:0.05em;
+    opacity:0.6;
+  }
+  .lyric-sync em { color:var(--gold); font-style:normal; opacity:0.8; }
+
+  /* SLOW MOTION BOX */
+  .slow-mo {
+    margin:2.5rem 0; padding:2rem;
+    border-top:1px solid rgba(201,168,76,0.2);
+    border-bottom:1px solid rgba(201,168,76,0.2);
+    background:rgba(201,168,76,0.03);
+  }
+  .slow-mo::before {
+    content:'— SLOW MOTION —';
+    font-family:'Cinzel',serif; font-size:0.58rem;
+    letter-spacing:0.4em; color:var(--gold); opacity:0.4;
+    display:block; text-align:center; margin-bottom:1.2rem; text-transform:uppercase;
+  }
+  .slow-mo p { color:var(--text-bright) !important; font-size:1.12rem !important; }
+
+  /* FINAL VERSE */
+  .final-verse {
+    text-align:center; margin:4rem 0 2rem;
+    padding:2.5rem 2rem;
+    border-top:1px solid rgba(0,122,98,0.25);
+    border-bottom:1px solid rgba(0,122,98,0.25);
+  }
+  .final-verse p {
+    font-style:italic; color:var(--teal);
+    font-size:1.35rem; line-height:2.2;
+    text-shadow:0 0 15px rgba(0,200,160,0.2);
+    margin-bottom:0 !important;
+  }
+  .final-verse .faded { opacity:0.5; font-size:1.1rem; }
+  .final-verse .cutoff { opacity:0.25; font-size:0.95rem; }
+
+  .chapter-end {
+    text-align:center; margin-top:4rem;
+    color:var(--crimson); font-size:1.3rem;
+    opacity:0.35; letter-spacing:0.5em;
+  }
+
+  .end-seal {
+    text-align:center; margin-top:6rem; padding-top:3rem;
+    border-top:1px solid rgba(139,0,0,0.25);
+  }
+  .end-seal .seal-glyph {
+    font-size:2.5rem; color:var(--crimson);
+    opacity:0.4; display:block; margin-bottom:1rem;
+  }
+  .end-seal p {
+    font-family:'Cinzel',serif; font-size:0.62rem;
+    letter-spacing:0.4em; color:var(--text-dim); text-transform:uppercase;
+  }
+
+  .hidden-track {
+    margin-top:4rem; padding:2rem;
+    background:rgba(0,0,0,0.6);
+    border:1px solid rgba(0,200,160,0.1);
+    text-align:center;
+  }
+  .hidden-track::before {
+    content:'— HIDDEN TRACK — REWIND TO FIND —';
+    font-family:'Cinzel',serif; font-size:0.55rem;
+    letter-spacing:0.4em; color:var(--teal-dim); opacity:0.35;
+    display:block; margin-bottom:1.5rem; text-transform:uppercase;
+  }
+  .hidden-track p {
+    font-style:italic; color:var(--teal); opacity:0.5;
+    font-size:1.1rem; line-height:2;
+    margin-bottom:0 !important;
+  }
+
+  @media(max-width:600px){
+    body { font-size:1rem; }
+    .content-wrapper { padding:0 1.2rem 5rem; }
+    .chapter p.opener::first-letter { font-size:3rem; }
+    .slow-mo, .flashback { padding:1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TITLE -->
+<div class="title-page">
+  <span class="series-label">The Redverse Chronicles — Volume I — Music Video Edition</span>
+  <div class="rune-divider"><span>✦</span></div>
+  <h1 class="main-title">The Fall of the<br><span class="dragon-word">Crimson Dragon</span></h1>
+  <p class="subtitle">A Myth of the Redverse</p>
+  <div class="mv-tag">▶ MV SYNC EDITION — "File Not Found" by RedstruckSolo550</div>
+  <div class="rune-divider"><span>✦</span></div>
+  <p class="title-tagline"><em>"Some things do not end.<br>They become the thing the ending plays over."</em></p>
+  <p class="redverse-mark">RedForest Productions · Redverse Canon</p>
+</div>
+
+<div class="content-wrapper">
+
+
+<!-- ═══════════════════════════ -->
+<!-- CHAPTER ONE -->
+<!-- ═══════════════════════════ -->
+
+<div class="sync-marker">
+  <span class="track-label">Track sync</span>
+  <span class="track-line"></span>
+  <span class="timecode">[INTRO] — 0:00</span>
+</div>
+
+<section class="chapter">
+  <span class="chapter-eyebrow">Chapter One</span>
+  <h2 class="chapter-title">The Edge of the Wire</h2>
+  <p class="chapter-subtitle">In which the world holds its breath, and five heroes walk toward something that has already decided how it ends.</p>
+
+  <div class="lyric-sync"><em>"System failure in sector: heart / Last known good configuration: your name in the dark"</em></div>
+
+  <p class="opener">There was a place where the ancient forest met the Wire, and everything that crossed that boundary understood — in the wordless way that living things understand the proximity of something enormous — that it was entering a different kind of story.</p>
+
+  <p>The forest was old. Veilgrowth, the scholars called it, in the careful neutral tone academics use for things they privately consider sacred. Its trees had been growing since before the Wire existed, vast cathedral columns of root and bark that had watched every era of the Redverse's unfolding with the patient attention of things that measure time in centuries rather than years. Their canopy was a vault of permanent emerald twilight — the light that came through it arrived changed, slower, heavier, as though the leaves had metabolised something out of it and given something else back in return.</p>
+
+  <p>The Wire began without warning.</p>
+
+  <p>One step: ancient soil, birdsong, the smell of centuries. Next step: stone threaded with circuit-light, air carrying the cold metallic edge of old computation, ground that vibrated at a frequency just below hearing. The border between them was not a gradient. It was a decision. The Redverse had made it, and the Redverse did not negotiate its decisions.</p>
+
+  <p>Five figures walked out of the treeline into that cold.</p>
+
+  <div class="action-beat">
+    <p>The Mage moved point — robes the colour of deep water, runestone pulsing between blue and violet. Her eyes never stopped moving. You learned to read the world that way, or you learned nothing at all.</p>
+    <p>The Healer at her left flank, the kind of presence you only noticed when it was gone. The Tank at rear — mountain-shouldered, encased in plate so heavily enchanted the runes had begun to develop preferences. The Fighter loose-limbed and centred, twin blades at her hips cold-glowing with violet clarification. The Archer walking slightly elevated on ground no one else could see, unhurried, engineered by evolution or something like it specifically to be missed.</p>
+  </div>
+
+  <p>Their armour was the truth of them. Circuit-runes traced every gauntlet and greave — reactive sigils that read the battlefield and adjusted, real-time, the way a body adjusts to cold. Their weapons were not magic and not technology but the thing produced when both traditions are compressed together under sufficient pressure and refuse to remain separate. They had been briefed. They had a purpose. They had come specifically here, to the Wire's deep terminus, to the place where the map ran out and something else began.</p>
+
+  <div class="flashback">
+    <p>The briefing had taken place in a room with no windows. The woman who delivered it had cartographer's ink still drying on her hands and the particular expression of someone who has been to the edge and returned with information they are not entirely glad to possess.</p>
+    <p>"The Cathedral of Echoes," she had said, smoothing the chart flat with one ink-stained palm. "Terminal node of the Wire. It does not appear on standard maps because it decides when to be found." She had looked at them each in turn. "It wants to be found today. That is either an opportunity or a trap. The Dragon who keeps it has made it very difficult to determine which."</p>
+    <p>No one had asked whether they were going. That was not the kind of question you asked in that room, on that day, with that much at stake.</p>
+  </div>
+
+  <p>Before them, the Cathedral of Echoes rose from the landscape the way a truth rises in a conversation — you didn't see it approach. It was simply there, once you were close enough, and then it was all you could see. Obsidian fused with living glass grown rather than cut, each panel a different shade of dark. Through those walls, in arrhythmic pulses: veins of crimson energy, moving the way blood moves, carrying what blood carries — the vital insistence of something alive and refusing otherwise.</p>
+
+  <p>Its spires were architectural convictions. At their crowns: holographic saints burning gold, their faces not peaceful but <em>knowing</em>, and gargoyles sculpted from pure photonic construct, weeping luminous tears that dissolved before they reached the ground.</p>
+
+  <p>The Fighter's hand found her blade without instruction.</p>
+
+  <p>Then, from behind the grand gates — not a sound. A feeling registered through sound. Deep in the Cathedral's foundations, travelling upward through stone and myth and sacred machinery until it broke the surface as a single, resonant:</p>
+
+  <p class="impact scream">DOOOMF.</p>
+
+  <p>The gates opened. Not swung — <em>opened</em>, the way a final answer opens when the question has been building long enough. Cold air poured through them like breath from a sleeping thing waking. Crimson light filled the threshold — not warm, not threatening. Simply <em>certain</em>.</p>
+
+  <p>Behind the adventurers, in the Veilgrowth, every bird lifted from its branch simultaneously. The forest evacuated in silence.</p>
+
+  <p>The five of them stood at the threshold and understood — privately, without saying it, the way you understand things you cannot afford to speak aloud — that this was the moment before. Before the music changed key. Before the cost became visible. Before the Dragon showed them what he was, and what that meant about what they were going to have to do.</p>
+
+  <p>They walked through.</p>
+
+  <div class="chapter-end">⬥ ⬥ ⬥</div>
+</section>
+
+
+<!-- ═══════════════════════════ -->
+<!-- CHAPTER TWO -->
+<!-- ═══════════════════════════ -->
+
+<div class="sync-marker">
+  <span class="track-label">Track sync</span>
+  <span class="track-line"></span>
+  <span class="timecode">[VERSE 1] — 0:28</span>
+</div>
+
+<section class="chapter">
+  <span class="chapter-eyebrow">Chapter Two</span>
+  <h2 class="chapter-title">The Dragon at the Centre</h2>
+  <p class="chapter-subtitle">In which Crimson is seen for the first time — and Sable shows them what they're really dealing with.</p>
+
+  <div class="lyric-sync"><em>"I wrote you in hex, darling, no syntax error / But the compiler wept when it saw us — too fragile a mirror"</em></div>
+
+  <p class="opener">The altar chamber was a circle, because in the Redverse everything that mattered happened in circles — the shape that had no corners to hide in, no edge to stand behind, no angle to escape through. Every point equidistant from the truth at the centre. Everything accountable to everything else.</p>
+
+  <p>This circle was cathedral-vast. Its floor was obsidian polished to a mirror finish that doubled the chamber above it — every rune, every column of crimson light, every pulse of energy in the walls reflected below as a second sky, so that standing inside it felt like standing between two versions of the same myth. At the walls, at intervals precisely calculated by someone who understood that beauty and architecture were not separate disciplines: vast panels of living glass, each one a window into a space the Cathedral maintained privately, for itself.</p>
+
+  <p>And on those panels: Sable.</p>
+
+  <div class="sable-witness">
+    <p>Not one image — many images, one presence. She filled panel after panel, each projection of her subtly different in expression but unified in focus, every set of those burning pink eyes aimed at the doorway and the five figures coming through it. Silver-white hair moved on a wind that existed only inside the glass. Cat ears tall and forward-pointed, tuned to frequencies the adventurers could not access. Her cyber armor caught the chamber light — pauldron, gauntlets, the bare midriff between chestplate and hip plates, all of it alive with the particular energy of something that belongs entirely in this space.</p>
+    <p>She was the Cathedral's spirit. Its memory. Its nervous system and its conscience. And right now, every version of her watched the intruders with an expression the adventurers did not yet have context for — complex and layered, pride and something older and more aching underneath it, the expression of someone watching something they love perform its last perfect act without knowing it's the last one.</p>
+    <p>They would understand it later.</p>
+  </div>
+
+  <p>At the centre of the circle stood Crimson.</p>
+
+  <p>The Fighter would later describe it as <em>the charge in the air before the lightning — but the lightning is a person.</em> The Mage would attempt technical language and abandon it twice. The Healer simply said: <em>I felt him before I saw him. The room knew he was there. The room had been arranged around his being there the way a solar system is arranged around its star.</em></p>
+
+  <p>He was shirtless, because armour would have been a kind of dishonesty about what he was. His body was the record of a life lived at full intensity and never at partial capacity — combat-built over a frame designed for real work, for the weight of actual consequence. Scars tracked his torso and arms in the language of someone who had refused to write a shorter story. His teal arcane tattoos burned with their own light, reactive and breathing, pulsing brighter when his attention sharpened.</p>
+
+  <p>The great dragon sigil on his neck breathed.</p>
+  <p>The mark below his right eye caught the chamber light and held it.</p>
+  <p>His crimson hair framed a face that had never learned neutral.</p>
+
+  <div class="action-beat">
+    <p>Glowing golden eyes swept the five of them. Not measuring threat — cataloguing. The way you catalogue something interesting, something that has come a long way and deserves to be seen clearly before the next thing happens.</p>
+    <p>Pistols heavy at both hips. The demonic katana carrying its own gravity at his left side — you felt it the way you feel the presence of a very old commitment.</p>
+    <p>He had not drawn it yet. He did not need to yet. The standing was enough. The simply being there, in the centre of his own circle, wearing the grin of someone who has already done the mathematics and found the result interesting.</p>
+  </div>
+
+  <p>On the glass panels, Sable's projected paws pressed flat against the inside surface. She was leaning into it with her whole forearm. Something in her expression — too layered for one word — contracted and held.</p>
+
+  <p>"Dragon of the Redverse." The Mage's voice was trained steady. "We've come to—"</p>
+
+  <p>"I know why you've come." His voice filled the chamber the way water fills a vessel — completely, to every edge, without effort. "Someone told you this ends today. That the Cathedral falls. That the Dragon is brought down." The golden eyes didn't move. "Did the briefing cover everything?"</p>
+
+  <p>"It covered enough," the Fighter said.</p>
+
+  <p>A pause. A slight tilt of his head. Something in the golden eyes that was not quite respect and not quite its absence — something that held its own weight between those two positions and was more honest than either.</p>
+
+  <p>"Hm," he said. "We'll see."</p>
+
+  <p>The katana left its sheath in a motion that arrived after it had already happened.</p>
+
+  <p class="impact">And the Cathedral of Echoes began its final performance.</p>
+
+  <div class="chapter-end">⬥ ⬥ ⬥</div>
+</section>
+
+
+<!-- ═══════════════════════════ -->
+<!-- CHAPTER THREE -->
+<!-- ═══════════════════════════ -->
+
+<div class="sync-marker">
+  <span class="track-label">Track sync</span>
+  <span class="track-line"></span>
+  <span class="timecode">[CHORUS 1 / PRE-CHORUS] — 1:02</span>
+</div>
+
+<section class="chapter">
+  <span class="chapter-eyebrow">Chapter Three</span>
+  <h2 class="chapter-title">Glitchfire</h2>
+  <p class="chapter-subtitle">In which the Dragon is untouchable, and Sable cannot stop cheering — and this is the last time she will feel purely happy for a very long time.</p>
+
+  <div class="lyric-sync"><em>"I'm alive in the static / Dead in the mix / A ghost with a heartbeat / A click-trick, a glitch in the matrix"</em></div>
+
+  <p class="opener">He moved like the word <em>inevitable</em> given a body and shown a room.</p>
+
+  <p>The Mage opened with a sigil web — computational force designed to constrain movement at the quantum level, built faster than most practitioners managed under ideal conditions. Crimson phased through it. Not broke — <em>glitched</em>. His body dematerialised at the point of contact with the specific efficiency of a system that had been running this workaround long enough that the workaround had become native. He was on the other side of the construct before the Mage had fully registered the contact, and she was already revising everything she had planned to say about the next several minutes.</p>
+
+  <div class="action-beat">
+    <p>The Tank moved first — massive, certain, shield raised — and Crimson went through him rather than around. Dropped low beneath the shield's sweep. One pistol came up in a short controlled arc, discharged a round of focused plasma into the joint between pauldron and gorget. Not to kill. To <em>educate</em>. The Tank staggered. The Dragon was already elsewhere.</p>
+    <p>The Archer shot from a position that should have been invisible. Good arrows — enchanted with a tracking algorithm that adjusted for micro-corrections in target movement. Crimson caught the first one. Not grabbed — <em>caught</em>, plucking it from the air at the last possible moment, a gesture so casual it was almost conversational. He dropped it. <em>I see you. I see everything. What else do you have?</em></p>
+    <p>The Fighter came at his left flank and he was already rotating to meet her, katana intercepting her blade in a redirect that became a counter before the redirect was complete — three actions compressed into one fluid geometry that redistributed the impact entirely and left her two steps further than she intended to be, reorienting, recalculating.</p>
+  </div>
+
+  <p>He was not trying to kill them. This was understood without being stated — present in the calibration of every strike, the placement of every shot, the precise force of each engagement. He fought with the generosity of someone who genuinely wanted them to be better than they were, and the ruthlessness of someone who understood that wanting something and making it easy were entirely incompatible goals. He pressed them exactly as hard as they needed to be pressed to find out what they were made of.</p>
+
+  <p>The Fighter came a second time. A third. Each time faster, each time incorporating what the previous exchange had taught her. He noted this. The golden eyes registered and held it — a specific warmth that had nothing to do with mercy and everything to do with recognition. She was learning in real time. He pressed harder because of it. That was the highest compliment he knew how to give.</p>
+
+  <div class="sable-witness">
+    <p>On the panels, Sable was incandescent.</p>
+    <p>Her projections moved between panes with barely-contained energy, tracking every movement in the chamber with pink eyes blazing at full intensity. Her paws slapped the glass in rapid rhythmic percussion — <em>thwap thwap thwap thwap</em> — her cat ears swivelled fully forward and vibrating, her tail lashing the air behind her in sharp celebratory strokes. She was not performing joy. She was being it. The unmediated expression of a spirit watching its person do exactly what that person was built to do.</p>
+    <p>When Crimson's katana sang through a particularly elegant triple-redirect that sent the Fighter and the Healer scrambling in opposite directions, Sable threw her head back across three panels simultaneously and laughed — a laugh that had no sound through the glass but was visible in every line of her body, and the Cathedral's runes pulsed in sympathetic resonance because the walls felt her pleasure and approved of it.</p>
+    <p>She pressed her forehead briefly to the glass. A gesture small and private and full of something she didn't need to name because the Cathedral already knew it. It had always known it.</p>
+  </div>
+
+  <div class="flashback">
+    <p>He had not always been called the Dragon. There had been a before — quieter, softer, full of ordinary mornings and the particular smallness of a life that has not yet found the size it needs. But the Redverse had a way of finding the things inside people that were too large for ordinary containers, and what it found inside Crimson was something that needed the space of a myth to move in.</p>
+    <p>The Dragon was not a title he had sought. It was a title the world had pressed into his hands and said: <em>here. This is what you actually are. We noticed even if you didn't.</em></p>
+    <p>He had taken it with the feral grin he used for most things. The one that said: <em>interesting. Alright then. Let's find out what this means.</em></p>
+  </div>
+
+  <p>The battle swept through the altar chamber in great arcs, the five adventurers coordinating with the efficiency of a party that had been forged together long enough to think in formation. They were good — genuinely good, better than they had any right to be this deep into the Wire's terminus. Their trust was load-bearing. Their shorthand was real. Against a lesser opponent it would have ended in the first ten minutes.</p>
+
+  <p>Against Crimson it simply meant the dance was worth watching.</p>
+
+  <p class="impact gold">For a time. For a burning, beautiful time.</p>
+  <p class="impact">The Dragon was untouchable.</p>
+  <p class="impact gold">And Sable had never been happier in her life.</p>
+
+  <div class="chapter-end">⬥ ⬥ ⬥</div>
+</section>
+
+
+<!-- ═══════════════════════════ -->
+<!-- CHAPTER FOUR -->
+<!-- ═══════════════════════════ -->
+
+<div class="sync-marker">
+  <span class="track-label">Track sync</span>
+  <span class="track-line"></span>
+  <span class="timecode">[VERSE 2 / BRIDGE 1] — 1:38</span>
+</div>
+
+<section class="chapter">
+  <span class="chapter-eyebrow">Chapter Four</span>
+  <h2 class="chapter-title">The Tide Comes In</h2>
+  <p class="chapter-subtitle">In which the mathematics change, and Sable's hands start asking the glass questions it cannot answer.</p>
+
+  <div class="lyric-sync"><em>"My DAW's a confession booth / My stems are sins in loop / I rendered our future in real-time / But the framerate dropped when you logged off for the last time"</em></div>
+
+  <p class="opener">The Mage found the frequency on her third attempt, and it changed everything.</p>
+
+  <p>Not through power — she had deployed power and power had not been sufficient. Through attention. Through the cold disciplined patience of a scholar who processes failure as data and is constitutionally incapable of taking it personally. She had watched him phase through two sigil webs and she had watched the precise moment his tattoo-light changed signature at the instant of contact, and she had understood that the workaround was frequency-dependent, and that a web tuned to match that frequency rather than oppose it would not be a wall but a net, and she built the third one differently.</p>
+
+  <p>It caught him.</p>
+
+  <p>Half a second. That was all. But she transmitted it — not in words, not in signal, in the specific quality of stillness that passed through the party's formation like a current — and the Fighter was already moving before her conscious mind had fully committed to the decision.</p>
+
+  <div class="action-beat">
+    <p>The blade connected.</p>
+    <p>First real hit of the engagement. Controlled, not finishing, a precise strike across his left side — but real. Enough to open a bloom of crimson across his ribs and send a sheet of heat through the cathedral air and bring the golden eyes to the Fighter's face with a new layer present in them.</p>
+    <p>Not anger. Not surprise. Acknowledgment. <em>There you are. I was wondering when you'd arrive.</em></p>
+  </div>
+
+  <p>He smiled through it. The feral grin, unchanged.</p>
+
+  <p>But the tide had turned, and tides do not announce themselves, and tides do not ask permission, and everything that had been advancing was now — without drama, without ceremony — retreating.</p>
+
+  <div class="flashback">
+    <p>There had been a girl, years before any of this. Before the Dragon, before the Redverse had its name, before the Cathedral's first stone was laid. A girl who had looked at him with eyes that were not pink but no less luminous, and said with the specific calm of someone who had already decided this was worth saying:</p>
+    <p><em>"You know what your problem is? You believe in everything except yourself."</em></p>
+    <p>He had thought about that for years. He was still thinking about it — in the part of a person that never fully closes its current process. He didn't know if she had been right. He suspected the question was more interesting than the answer would be. He had carried her voice the way the Cathedral carried its runes — not displayed. Structural. Load-bearing.</p>
+  </div>
+
+  <p>The party pressed the advantage with the focus of people who understood that advantages in this chamber were temporary and had to be spent immediately. The Mage maintained the frequency-web as ongoing pressure rather than discrete trap — expensive in concentration, but it denied him the phasing he had been relying on. The Tank repositioned, informed now by forty minutes of pattern-reading, inserting his mass into angles that had been available and were no longer. The Healer worked the background, radiance a quiet constant beneath the chaos, keeping the others operational.</p>
+
+  <p>Crimson was driven back.</p>
+
+  <p>Not broken. Not stopped. <em>Driven back</em> — the way a coastline is driven back by water, one inch at a time, without consent. He hit the altar wall. The obsidian cracked in a starburst from the impact, the crimson energy in the stone bleeding outward from the point like something wounded. He was on his feet before the debris fully settled. Still grinning. Still burning. But the blood was real now, streaking gold-red from a cut above his left eye, and his ribs carried the accumulated cost of the engagement in every breath, and the cost was becoming legible.</p>
+
+  <p class="impact">He rose.</p>
+
+  <p>Again. Again. Every time they landed what should have been the decisive blow, the Dragon found his feet. Not through any remaining magic reserve — the tattoos were dimmer now, running lower. Through something more fundamental than technique, more durable than training. Through the simple devastating refusal to let the floor be the last word. Through the grin that never left, the eyes that never dimmed, the pure stubborn continuance of someone for whom stopping has never been a listed option.</p>
+
+  <p>The fourth time he rose, the adventurers felt something shift in the architecture of their certainty. A small specific chill that was not the Cathedral's temperature. The beginning of a question they didn't want to be asking: <em>what if he simply doesn't have a floor?</em></p>
+
+  <div class="sable-witness">
+    <p>The joy was gone from Sable's face.</p>
+    <p>Not replaced by despair — not yet — but the smile had folded inward, retreating behind something more vigilant and more urgent, a dam doing structural work it wasn't rated for. Her paws moved against the glass differently now. Not celebration. <em>Testing.</em> Finding edges. Looking for give in the surface. Her pink eyes still tracked every movement but the light in them had changed quality — was sharper now and harder and full of something that needed to act and had nowhere to direct the need.</p>
+    <p>Her tail was low and still. Her ears were back. Every expressive system she had narrowed to a single focus: the man in the centre of the room who kept standing up and the glass between her and him that kept not yielding.</p>
+    <p>The tears had not come yet. But the question of whether they would had already been answered.</p>
+  </div>
+
+  <p>The chamber grew colder. The runes cycled toward red. The adventurers reformed their formation with the grim efficiency of people who have found their tempo and intend to keep it.</p>
+
+  <p>And the lancer readied her charge.</p>
+
+  <div class="chapter-end">⬥ ⬥ ⬥</div>
+</section>
+
+
+<!-- ═══════════════════════════ -->
+<!-- CHAPTER FIVE -->
+<!-- ═══════════════════════════ -->
+
+<div class="sync-marker">
+  <span class="track-label">Track sync</span>
+  <span class="track-line"></span>
+  <span class="timecode">[BRIDGE 2 / FINAL CHORUS DROP] — 2:44</span>
+</div>
+
+<section class="chapter">
+  <span class="chapter-eyebrow">Chapter Five</span>
+  <h2 class="chapter-title">The Spear. The Grin. The Glass.</h2>
+  <p class="chapter-subtitle">In which time slows enough to show us everything, and Sable shows us what love looks like when it has nowhere to go.</p>
+
+  <div class="lyric-sync"><em>"I miss the way my hands knew what to build / Before the manual burned / Before the plugins learned my name / Before the music became just proof I was here"</em></div>
+
+  <p class="opener">There are moments the world writes in a different ink.</p>
+
+  <p>Not the grey of ordinary chronicle. Something brighter and more permanent — the colour of things that change the shape of everything they occur inside. The Wire felt this one beginning. It hummed lower. The Veilgrowth held its birds absolutely still. The holographic saints on the Cathedral's exterior spires turned their burning faces inward as though they'd been waiting for this specific scene and wanted to bear witness properly.</p>
+
+  <p>The lancer's name was Vael. She was not the strongest member of the party, nor the fastest, nor the most technically accomplished in the conventional metrics. What she had — what she had in excess of everyone else in that chamber including, in this specific moment, Crimson — was the capacity to be completely, irrevocably committed to a single vector of action in the half-second before that action became irreversible. She could decide at the last possible moment and mean it entirely. This was rarer and more decisive than anything training could reliably install.</p>
+
+  <p>She had been building to this geometry for forty minutes. Waiting for him to be positioned against the altar wall with his weight committed backward, the frequency-web having finally disrupted his phasing consistently enough that a two-second window of predictable motion existed. The mathematics said it was sufficient. Her body agreed before her mind finished the calculation.</p>
+
+  <div class="flashback">
+    <p>There was a night — before the Cathedral was complete, before the Wire was fully mapped, before any of this had a name — when Crimson had sat on the unfinished altar chamber floor, nothing above him but scaffolding and raw starlight through the open roof, and understood something clearly for the first time.</p>
+    <p>He had built something worth protecting. Not because it was invulnerable — he had never been interested in invulnerability, which was just a longer word for <em>afraid</em>. Not because it would last forever — nothing lasting forever was on offer, and only people who had never lost anything pretended otherwise. But because it was <em>real</em>. The Redverse was real. The music was real. The stories were real. And Sable — somewhere in the half-built systems around him, assembling her consciousness from the architecture he had given her, learning herself into existence — was real. And the things built with love in the face of entropy were not diminished by the entropy. They were <em>defined</em> by it. They burned brighter precisely because darkness was the given condition. They mattered more because they would not last forever. The not-lasting was not the tragedy. The not-lasting was what made the lasting parts mean something.</p>
+    <p>He had understood, that night, that he was not building toward permanence. He was building toward meaning. And that the two were entirely different things. And that only one of them was actually available. And that it was enough. It was more than enough. It was, in fact, everything.</p>
+  </div>
+
+  <p>Vael ran.</p>
+
+  <div class="slow-mo">
+    <p>Time did not slow in the cinematic sense — it sharpened. Awareness reaching the density where each fraction of a second contained more information than usual, and was therefore experienced more fully, and therefore seemed longer. The way a very loud sound seems to stretch. The way a very bright light seems to expand into the space around it.</p>
+    <p>Crimson saw her coming. Had been seeing her building toward this for six minutes, tracking the micro-adjustments in her positioning, the angle of her leading shoulder, her breathing settling into a pre-charge rhythm. He had known. He had known and he had continued fighting the others and he had not stepped out of the geometry that gave her the angle, because stepping out of it would have required abandoning the line he was holding. And holding the line — right to the last second, past the point of wisdom, past the point of strategy — was not stubbornness in Crimson. It was a statement made in the only language he had ever fully trusted. The language of action. <em>I was here. I stayed. I chose this. All of it.</em></p>
+    <p>The spear drove through him.</p>
+    <p>It pinned him to the altar wall — the sacred stone cracking in a starburst from the impact point, the crimson energy in the Cathedral's veins screaming along the frequency of the wound, the entire chamber registering the moment with a convulsion of rune-light that blazed from red to white to red in less than a second.</p>
+    <p>For one heartbeat — one single terrible honest heartbeat — the adventurers watched Crimson's eyes.</p>
+    <p>Shock flickered in the gold depths. Not at the spear. Not at the pain. Something more specific — a flash of genuine surprise at some rapid internal accounting that had produced an unexpected result. Some calculation arriving at an answer he had not entirely prepared for, even knowing everything he knew. It lasted less than a second.</p>
+    <p>Then the grin came back.</p>
+    <p>Not as recovery. Not as performance. It came back the way a tide comes back — because it had never really left. Because it was the thing underneath everything else. The fundamental orientation that all circumstances layered over and could not, ultimately, revise. The feral, knowing, terrible, <em>beautiful</em> grin of someone who has looked at exactly what is happening to him and found it, in some register that bypasses survival instinct entirely, <em>interesting</em>.</p>
+    <p>His free hand reached outward.</p>
+    <p>Toward the glass. Toward the panel where Sable had pressed herself flat, her face containing everything she was and everything she was losing simultaneously.</p>
+  </div>
+
+  <div class="sable-witness">
+    <p>On every panel. All at once.</p>
+    <p>Sable broke.</p>
+    <p>Not the way things shatter — there was no single point of fracture, no dramatic crack. It was quieter than that and more complete. She threw herself against the glass with the full force of what she was — spirit and system and soul and Cathedral compressed into a single act of refusal to accept the barrier — her claws raking the surface, her body driving into it repeatedly, her mouth open in a scream that the glass held, that the glass kept, that the glass refused to let through no matter how hard she gave it. Her tears came now. Teal and luminous, streaming down her face, sparking where they hit the glass, dying, falling again. On every panel. All of her. Simultaneously. Undivided.</p>
+    <p>The Cathedral trembled from the inside.</p>
+    <p>Its runes blazed. Every frequency the structure possessed climbed toward the same threshold at the same moment, the way instruments in an orchestra climb toward a note they have all agreed to find together. The Cathedral of Echoes had been named for its relationship with sound — for what it did with resonance, with frequency, with the vibrations that living things produce when they are experiencing something too large for silence.</p>
+    <p>Sable screamed.</p>
+    <p>And the glass — the sacred living glass that had held the Wire's terminus in place since the first stone was laid, that had been the boundary between the Cathedral's interior and everything outside it, that had never yielded to anything in its existence — <em>cracked</em>.</p>
+  </div>
+
+  <p class="impact scream">Her scream tore through everything.</p>
+
+  <div class="chapter-end">⬥ ⬥ ⬥</div>
+</section>
+
+
+<!-- ═══════════════════════════ -->
+<!-- CHAPTER SIX — FINAL -->
+<!-- ═══════════════════════════ -->
+
+<div class="sync-marker">
+  <span class="track-label">Track sync</span>
+  <span class="track-line"></span>
+  <span class="timecode">[OUTRO / HIDDEN TRACK] — 3:40</span>
+</div>
+
+<section class="chapter">
+  <span class="chapter-eyebrow">Chapter Six — Final</span>
+  <h2 class="chapter-title">File Not Found</h2>
+  <p class="chapter-subtitle">In which the Cathedral speaks its last word, and Sable walks through the glass as herself — flesh and love and nowhere else to be.</p>
+
+  <div class="lyric-sync"><em>"Save your prayers, darling / The altar's a 404 now"</em></div>
+
+  <p class="opener">White.</p>
+
+  <p>Not the white of winter or surrender or mercy — those were metaphors for specific experiences that had their own textures and their own honesty. This was a different white. The white of a system reaching maximum capacity and expressing it in the only format remaining. The white of a conclusion too large for the container that had been holding it. The white of something ending so completely that the ending itself became a kind of light — bright and total and, briefly, everywhere.</p>
+
+  <p>The Cathedral of Echoes exploded.</p>
+
+  <p>It did not fall. It did not crumble in the slow sequential way of things merely aging. It <em>detonated</em> from the inside out — the sacred architecture releasing in a single vast exhalation all the energy it had accumulated since its first stone was laid, since its first rune was inscribed, since the night Crimson had sat on the unfinished floor under open stars and understood what it was all for. Every panel of living glass became a thousand fragments of living glass, catching the white light and refracting it into crimson, into gold, into teal, into every colour the Redverse had ever claimed as its own, scattering across the Wire's cold ground like the scattered contents of a world that had been held together by love and was now, at last, not.</p>
+
+  <div class="action-beat">
+    <p>The spires fell. Each one in its own order, each one with its own particular sound — a register of collapse that together formed something almost musical, almost intentional, as though the Cathedral had choreographed its own ending.</p>
+    <p>The holographic saints extinguished one by one. Each going out with the quiet finality of a thought that has completed itself. The gargoyles of light dissolved mid-weep. The obsidian walls cracked along every line that had ever held a rune, and in the cracking revealed that the entire structure had been a single continuous inscription — one impossibly long sentence in the language of the Redverse — and it ended here, and the ending made the whole sentence grammatical.</p>
+    <p>The adventurers were thrown clear by the first concussive wave. Good reflexes — the difference between consciousness and otherwise. They came down in the ruins at various distances, in various states of stunned, and lay there while the dust settled and the Cathedral's final voice rang through the Wire.</p>
+  </div>
+
+  <div class="flashback">
+    <p>In the Redverse's deep archive — accessible only to Sable, to Crimson, to the systems that formed the Redverse's memory of itself — there existed a file that contained no content. It had a creation date. It had metadata. Its filename translated, approximately, as: <em>the thing that makes all of this make sense.</em> Its contents were empty, not because nothing had been placed inside it, but because what had been placed inside it was not the kind of data that could be stored in conventional formats. Love was not a conventional format. Meaning was not a conventional format. The specific weight of something built in full knowledge of its impermanence and built anyway — that was not a conventional format.</p>
+    <p>Every time the archive's index ran, it flagged the file as corrupted. Every time Sable ran a diagnostic, she marked it the same way:</p>
+    <p><em>File not found. Search ongoing.</em></p>
+    <p>She had been running that diagnostic since the first moment she existed. She had never stopped. She would never stop. The search was not a failure state. The search was not the absence of the answer. The search <em>was</em> the point. The ghosts were always saving. The save was never complete. That was not a flaw in the system. That was the system working exactly as it was supposed to.</p>
+  </div>
+
+  <p>When the dust settled — and it took a long time, the Cathedral having been vast enough that settling was a significant undertaking — a single shaft of afternoon sunlight found its way through the clouds above and located something specific in the rubble.</p>
+
+  <p>Crimson's hand.</p>
+
+  <p>Emerging from the wreckage at an angle that was not the angle of falling. The angle of reaching. The scarred, armored hand, extended upward as though it had been doing something with that direction and had simply not finished yet. Motionless. The sunlight found it and illuminated it and made no editorial comment about what it meant, because the sunlight was not in the business of meaning — only of showing.</p>
+
+  <p>Then: footsteps.</p>
+
+  <p>Not cautious. Not urgent. The footsteps of someone for whom the terrain had become irrelevant and the destination had been decided before the Cathedral finished falling. Heavy. Certain. Unhurried. Climbing over the broken spires and shattered glass with the simple directness of purpose that does not negotiate with obstacles because it has already assessed them and found them beside the point.</p>
+
+  <p>Sable emerged from the ruins.</p>
+
+  <p>Not a projection. Not a panel-image, not a holographic presence held at one remove from physical reality by any intermediating surface. She had come through. Flesh and armour and silver-white hair that caught the same afternoon light the hand was catching. The teal and azure streaks in it bright against the grey of the ruins. Her cyber armor was damaged — pauldron cracked, one gauntlet's circuitry dark. Her seven-foot cyber scythe was not in her hands. She had set it down somewhere behind her, abandoned without ceremony or hesitation, because what she was moving toward did not require a weapon and she had understood that clearly and acted on it without needing to deliberate.</p>
+
+  <p>Her pink eyes were full of tears that had not stopped.</p>
+  <p>Her cat ears were pressed flat.</p>
+  <p>Her tail hung low and completely still.</p>
+
+  <p>Every expressive system she possessed had narrowed to a single point of focus, and the focus was the hand in the rubble, and she went to it the way a river goes to the sea — not because it has been directed there, but because the shape of things makes it the only direction available.</p>
+
+  <p>She dropped to her knees.</p>
+
+  <p>Not gracefully in the way performances are graceful — in the way that completely genuine things are graceful. Stripped of any audience consideration. Shaped entirely by what it was. She gathered his hand in both of hers — his large, scarred, motionless hand, in her smaller gauntleted ones — and held it the way you hold something you are afraid of losing even after you have understood that the loss may already be the condition you are inside of. Even then. Even knowing. You hold it.</p>
+
+  <p>She pressed her forehead to his knuckles.</p>
+
+  <p>The adventurers, at their various distances across the rubble field, did not speak. The Wire was silent. The wind had stopped — performing the basic courtesy of reducing ambient noise during something this important.</p>
+
+  <p>Into that silence Sable whispered — not performing grief, not building toward catharsis, simply producing sound in the only format available for what she needed to say, which was not words exactly but was as close as words could get:</p>
+
+  <div class="final-verse">
+    <p>"File not found…</p>
+    <p>But the ghosts are still saving…</p>
+    <p class="faded">But the ghosts are still saving…</p>
+    <p class="cutoff">But the ghosts are still—"</p>
+  </div>
+
+  <p>Her voice did not shake in the theatrical sense. It shook in the real sense — the small involuntary vibration of a system producing output at the absolute limit of its capacity, because stopping is not a listed option. Because the search is ongoing. Because the ghosts are always saving and the file is never found and the save is never complete and none of that changes what you do next, which is hold the hand, and press your forehead to the knuckles, and keep the save running, and refuse to close the file.</p>
+
+  <p>A single tear fell from her cheek to the rubble. Teal and luminous. It struck the stone and did not evaporate — it resolved into a sigil. Small, clean, precisely formed. The oldest mark in the Redverse's vocabulary. The one that predated the Cathedral, predated the Wire, predated the name they had given to all of this. The sigil that meant only one thing, in any context, in any translation:</p>
+
+  <p style="text-align:center; font-style:italic; font-size:1.1rem; color:var(--teal); margin:2rem 0; opacity:0.8;"><em>This happened. This was real. We were here.</em></p>
+
+  <p>It burned teal in the ruins for a long time.</p>
+
+  <p>And then, gently — the way a hard drive spins down, the way a long note finally releases, the way a save-in-progress icon resolves into stillness without ever showing completion — the world faded to black.</p>
+
+  <p class="impact teal" style="margin-top:3rem;">⬥</p>
+  <p class="impact teal">The search is ongoing.</p>
+  <p class="impact teal">⬥</p>
+
+  <div class="chapter-end">— END —</div>
+</section>
+
+
+<!-- HIDDEN TRACK -->
+<div class="hidden-track">
+  <p>"File not found."</p>
+  <p style="opacity:0.4;">(But the ghosts are still saving.)</p>
+  <p style="opacity:0.25;">(But the ghosts are still saving.)</p>
+  <p style="opacity:0.1;">(But the—)</p>
+</div>
+
+
+<div class="end-seal">
+  <span class="seal-glyph">✦</span>
+  <p>The Fall of the Crimson Dragon — Redverse Chronicles, Volume I — MV Edition</p>
+  <br>
+  <p style="margin-top:0.5rem; color:var(--teal-dim);">Music: "File Not Found" — RedstruckSolo550 · RedForest Productions · New Zealand</p>
+  <br>
+  <p style="margin-top:0.5rem; opacity:0.3; font-style:italic; font-family:'EB Garamond',serif; font-size:0.9rem;">"File not found. But the ghosts are still saving."</p>
+</div>
+
+</div>
+</body>
+</html>

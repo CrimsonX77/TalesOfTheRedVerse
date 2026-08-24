@@ -1,0 +1,235 @@
+# ═══════════════════════════════════════════════════════════════
+# REDVERSE — "BLOOD OF THE ALTAR"
+# Supporter Thank-You Anthem
+# 
+# CONCEPT: Each supporter's name appears above a blood altar.
+# With each name, a new musical layer builds — starting sparse,
+# ending as a full metalcore operatic choir.
+# Split this into fragments: each [Layer] section can be 
+# generated separately and stacked in your DAW or Suno Studio.
+# ═══════════════════════════════════════════════════════════════
+
+
+# ═══════════════════════════════════════════════════════════════
+# STYLE PROMPT (paste into "Style of Music" field)
+# ═══════════════════════════════════════════════════════════════
+
+# OPTION A — Full descriptive (recommended for v5):
+"""
+Metalcore, symphonic metal, operatic vocals, cinematic build, 
+dark cathedral atmosphere, male baritone leading to layered 
+choir, heavy distorted guitars over orchestral strings, 
+double kick drums, pipe organ undertones, dramatic crescendo, 
+140 BPM, drop-tuned, epic and reverent, aggressive yet sacred
+"""
+
+# OPTION B — Shorter/punchier if A is too busy:
+"""
+Symphonic metalcore, operatic male vocals, cathedral 
+atmosphere, cinematic crescendo, 140 BPM, dark and epic
+"""
+
+
+# ═══════════════════════════════════════════════════════════════
+# LYRICS — Structured for layered fragmentation
+# 
+# Each [Layer] section represents a new musical layer building.
+# Generate each section separately, then stack them.
+#
+# CAPS = screamed/shouted delivery (Suno interprets this)
+# (parentheses) = backing vocals / choir
+# ... = breath pause
+# ═══════════════════════════════════════════════════════════════
+
+
+# ─── LAYER 1: THE WHISPER (Solo voice + ambient drone) ───────
+
+[Atmospheric Intro]
+[Soft, reverberant, single male voice, cathedral reverb]
+[Pipe organ drone, distant]
+
+From the dark we called...
+And you answered
+
+[Spoken Word, Whispered]
+Blood remembers those who gave it freely
+
+
+# ─── LAYER 2: THE PULSE (Add heartbeat kick + bass) ──────────
+
+[Verse 1]
+[Low male baritone, intimate, slow build]
+[Single clean guitar, heartbeat kick drum]
+
+Written in the crimson ledger
+Names that burn like ember prayers
+Every soul who lit a candle
+When the cathedral stood in shadow
+
+Each name a rune upon the altar
+Each gift a thread within the weave
+You did not look away... you stayed
+You bled with us... you believed
+
+
+# ─── LAYER 3: THE STRINGS (Add orchestral layer) ─────────────
+
+[Pre-Chorus]
+[Building intensity, strings enter, choir hums underneath]
+[Orchestral strings swell, timpani rumble]
+
+And the blood lake rises
+And the stories multiply
+Every tale we told... you carried
+Every wound... you sanctified
+
+
+# ─── LAYER 4: THE WALL (Full band enters) ────────────────────
+
+[Chorus]
+[Full metalcore instrumentation, operatic delivery, powerful]
+[Heavy distorted guitars, double kick, full orchestra, choir]
+
+WE ARE THE CHURCH THAT WOULD NOT FALL
+(would not fall)
+BUILT ON THE BONES OF THOSE WHO CALLED
+(those who called)
+Your names are carved in crimson stone
+You are the blood... the altar... the throne
+
+[Instrumental Break]
+[Heavy breakdown, chugging guitars, choir sustains]
+
+
+# ─── LAYER 5: THE NAMES (Spoken + building choir) ────────────
+
+[Bridge]
+[Spoken word over building layers, names read with reverence]
+[Clean guitar returns, layers build one by one]
+[Each line adds a new voice to the choir]
+
+To those who came when no one watched
+To those who gave when nothing grew
+To those who said "I see you"
+When the world said otherwise...
+
+(We remember)
+(We remember)
+(We remember you)
+
+
+# ─── LAYER 6: THE CRESCENDO (Everything at once) ─────────────
+
+[Final Chorus]
+[Maximum intensity, full choir, full orchestra, full metal]
+[Operatic tenor soars over metalcore wall of sound]
+
+WE ARE THE CHURCH THAT WOULD NOT FALL
+(WOULD NOT FALL)
+FORGED IN THE FIRE OF THOSE WHO CALLED
+(THOSE WHO CALLED)
+Your names are written past all time
+Beyond the verse... beyond the rhyme
+YOU ARE THE BLOOD
+THE ALTAR  
+THE THRONE
+
+(The throne... the throne... the throne...)
+
+
+# ─── LAYER 7: THE SILENCE (Strip everything back) ────────────
+
+[Outro]
+[Sudden strip to solo voice, pipe organ fading]
+[Intimate, reverent, whispered]
+
+And when the last tale has been told...
+And the blood lake has run still...
+Your names will echo in these halls
+
+[Whispered]
+Forever written... never forgotten
+
+[Fade to silence]
+[End]
+
+
+# ═══════════════════════════════════════════════════════════════
+# FRAGMENTATION GUIDE
+# ═══════════════════════════════════════════════════════════════
+#
+# To create the layered supporter page effect:
+#
+# 1. Generate Layer 1 as a standalone clip (~15-20 sec)
+#    - Just ambient drone + whispered voice
+#    - This plays when the first name appears
+#
+# 2. Generate Layer 1+2 together (~30 sec)
+#    - Add heartbeat kick, bass, clean guitar
+#    - Plays as 2nd-3rd names appear
+#
+# 3. Generate Layer 1+2+3 (~30 sec)
+#    - Strings enter, choir hums
+#    - Plays as 4th-6th names appear
+#
+# 4. Generate Layer 4 (Chorus) as its own clip
+#    - Full band wall of sound
+#    - Plays as the main wave of names scrolls
+#
+# 5. Generate Layer 5 (Bridge) separately
+#    - The "spoken names" section
+#    - This is where individual supporter names appear
+#    - You can re-record this with your TTS module
+#
+# 6. Generate Layer 6 (Final Chorus)
+#    - Maximum everything
+#    - The climax as all names are on screen
+#
+# 7. Generate Layer 7 (Outro) as standalone
+#    - Strip back, whisper, silence
+#    - Final held frame of the altar with all names
+#
+# ═══════════════════════════════════════════════════════════════
+# ALTERNATIVE: Generate the full song as one piece first,
+# then use Suno Studio's Region Editing to isolate sections
+# and adjust individual layers. Export as multitrack stems.
+# ═══════════════════════════════════════════════════════════════
+
+
+# ═══════════════════════════════════════════════════════════════
+# SUNO v5 TIPS FOR THIS SPECIFIC TRACK
+# ═══════════════════════════════════════════════════════════════
+#
+# KEY TAGS THAT WORK WELL IN v5:
+#   [Spoken Word]      — triggers speech instead of singing
+#   [Whispered]        — soft breathy delivery  
+#   [Instrumental Break] — pure music, no vocals
+#   ALL CAPS LYRICS    — triggers shouted/screamed delivery
+#   (parentheses)      — triggers backing vocals / choir
+#   [Fade to silence]  — natural fadeout
+#   [End]              — hard stop signal
+#
+# STYLE FIELD TIPS:
+#   - Front-load the genre: "Metalcore, symphonic metal" first
+#   - Keep to 2-3 moods: "dark, epic, reverent"
+#   - Specify BPM: "140 BPM" for that metalcore sweet spot
+#   - Name instruments: "distorted guitars, double kick, 
+#     pipe organ, orchestral strings, choir"
+#   - Vocal character: "male baritone", "operatic tenor"
+#
+# v5 SPECIFIC FEATURES:
+#   - Region editing: generate full song, then isolate/edit sections
+#   - Clip settings: adjust tempo behavior per clip
+#   - Multitrack export: get stems for mixing externally
+#   - Callback phrasing: reference earlier melodies in later sections
+#
+# VOCAL STACKING TIP:
+#   For the choir effect, generate the same section 3-4 times
+#   with slight style variations:
+#     Run 1: "operatic male baritone choir"
+#     Run 2: "operatic female soprano choir"  
+#     Run 3: "gregorian chant male voices"
+#     Run 4: "ethereal female harmonies"
+#   Then layer them in Studio or your external DAW.
+#
+# ═══════════════════════════════════════════════════════════════

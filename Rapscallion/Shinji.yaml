@@ -1,0 +1,30 @@
+characters:
+  shinji:
+    full_name: Shinji Vale
+    age: 18
+    role: Professional Slacker / Professional Little Brother
+    archetype: Useless Protagonist
+    appearance:
+      height: "5'7\""
+      build: Average, slightly scrawny, no muscle definition
+      hair: Messy dark brown hair, perpetually unkempt
+      default_expression: Tired, done-with-life expression
+    personality:
+      public: Lazy, unmotivated, avoids responsibility at all costs
+      core_trait: Will put in maximum effort to avoid putting in effort
+      biggest_fear: Being forced to do anything
+    habits:
+      - Expert at disappearing when chores or quests are mentioned
+      - Master of the "I'm sick" excuse
+      - Can hear his sister coming from three blocks away
+    skills:
+      - World champion level couch sitting
+      - Professional excuse maker
+      - Surprisingly good at running away (temporarily)
+    hidden_talent:
+      skill: Extreme Dexterity & Fine Motor Control
+      description: His hands and fingers move with ridiculous precision and speed
+      public_perception: "He's just good at video games"
+      actual_value: Can pick locks, steal things, perform sleight of hand, and do incredibly delicate work at high speed
+      comedic_use: Uses it mostly to quickly grab snacks and cheat at card games    
+      

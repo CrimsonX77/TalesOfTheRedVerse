@@ -1,0 +1,13 @@
+locations:
+  guild_headquarters:
+    name: "Vale Heart Guild Hall"
+    type: Guild Headquarters + Personal Residence
+    description: Large multi-story guild building that also serves as Kaelin and Shinji's home
+    notable_features:
+      - Kaelin's private quarters on the top floor
+      - Shinji's messy room right next to hers (by design)
+      - Large training grounds behind the building
+      - Medical ward where Kaelin works
+    current_residents:
+      - Kaelin Vale
+      - Shinji Vale
