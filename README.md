@@ -17,7 +17,7 @@ The genre, to the extent one applies: **Mythopunk** — the author's own term fo
 
 ---
 
-<img src="1500x500.jpg" alt="Redverse visual" width="100%" />
+<img src="TalesOfTheRedVerse/FallOfDragon/1500x500.jpg" alt="Redverse visual" width="100%" />
 
 ## The Stories
 
