@@ -17,7 +17,7 @@ The genre, to the extent one applies: **Mythopunk** — the author's own term fo
 
 ---
 
-<img src="TalesOfTheRedVerse/FallOfDragon/1500x500.jpg" alt="Redverse visual" width="100%" />
+<img src="FallOfDragon/assets/1500x500.jpg" alt="Redverse visual" width="100%" />
 
 ## The Stories
 
@@ -45,7 +45,7 @@ The glitch-punk, recursively self-aware flagship with anime opening sequence doc
 **Gallowmere** *(~22,000 words)*
 A gothic dueling academy built around the philosophy that losing must be made inevitable before it can be accepted. Includes world context, pruned narrative drafts, and Sebastian's arc.
 
-<img src="Gemini.jpg" alt="Gallowmere academy visuals" width="100%" />
+<img src="FallOfDragon/assets/Gemini.jpg" alt="Gallowmere academy visuals" width="100%" />
 
 ---
 
@@ -63,7 +63,7 @@ Character-focused deep dives into the world of Ashenford, structured around name
 
 Two parallel tales — **LunaTale** and **SableTale** — exploring the same emotional geography from different angles. Compact, emotionally precise.
 
-<img src="og-image.jpg" alt="Cathedral sequence visuals" width="100%" />
+<img src="FallOfDragon/assets/og-image.jpg" alt="Cathedral sequence visuals" width="100%" />
 
 ---
 
@@ -218,7 +218,7 @@ This repository is private. The Redverse is not yet ready for the world. But it 
 
 <img src="FallOfDragon/assets/og-image.jpg" alt="The Redverse lives" width="100%" />
 
-<img src="BloodCathedral.jpg" alt="Redverse cinematic" width="100%" />
+<img src="FallOfDragon/assets/BloodCathedral.jpg" alt="Redverse cinematic" width="100%" />
 
 ---
 
