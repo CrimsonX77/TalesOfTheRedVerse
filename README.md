@@ -45,7 +45,7 @@ The glitch-punk, recursively self-aware flagship with anime opening sequence doc
 **Gallowmere** *(~22,000 words)*
 A gothic dueling academy built around the philosophy that losing must be made inevitable before it can be accepted. Includes world context, pruned narrative drafts, and Sebastian's arc.
 
-<img src="grok-image-f806562d-f034-46f2-85c6-416c6d2d57e5.jpg" alt="Gallowmere academy visuals" width="100%" />
+<img src="Gemini.jpg" alt="Gallowmere academy visuals" width="100%" />
 
 ---
 
@@ -63,7 +63,7 @@ Character-focused deep dives into the world of Ashenford, structured around name
 
 Two parallel tales — **LunaTale** and **SableTale** — exploring the same emotional geography from different angles. Compact, emotionally precise.
 
-<img src="grok-image-f806562d-f034-46f2-85c6-416c6d2d57e5.jpg" alt="Cathedral sequence visuals" width="100%" />
+<img src="og-image.jpg" alt="Cathedral sequence visuals" width="100%" />
 
 ---
 
