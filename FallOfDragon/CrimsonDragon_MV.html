@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crimson Valentine</title>
+<meta name="description" content="Crimson Valentine — musician, creator, and architect of the Redverse. Redshifted cybercore, AI collaborators, and mythic storytelling from the deep south of New Zealand.">
+<meta property="og:title" content="Crimson Valentine">
+<meta property="og:description" content="Redshifted cybercore, AI collaborators, and mythic storytelling from the deep south of New Zealand.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://youtube.com/@CrimsonDragonX7/">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta name="theme-color" content="#0a0000">
+<link rel="canonical" href="https://crimsonx77.github.io/">
+<link rel="canonical" href="https://www.youtube.com/@CrimsonDragonX7">
+<link rel="canonical" href="https://x.com/valentine10553">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Crimson Valentine",
+  "alternateName": ,
+  "description": "Musician, creator, and architect of the Redverse. Redshifted cybercore, AI collaborators, and mythic storytelling.",
+  "url": "https://www.youtube.com/@CrimsonDragonX7",
+  "image": "assets/og-image.jpg",
+  "sameAs": [
+    "https://x.com/valentine10553",
+    "https://www.instagram.com/crimson1819/",
+    "https://github.com/CrimsonX77",
+    "https://www.youtube.com/@CrimsonDragonX7",
+    "https://suno.com/@redstrucksolo550",
+    "https://www.patreon.com/c/CrimsonDragonX7"
+  ],
+  "jobTitle": "Musician and Creator",
+  "nationality": "New Zealand",
+  "knowsAbout": ["Music Production", "Cyberpunk", "AI Art", "Animation", "Worldbuilding", "Stable Diffusion", "Suno"]
+}
+</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; background: #0a0000; font-family: 'Courier New', monospace; color: #ff2d6a; }
+  #bg-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.45; }
+  #bg-fallback { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.45; display: none; }
+  .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at center, rgba(10,0,0,0.3) 0%, rgba(10,0,0,0.85) 70%); z-index: 1; }
+  .content { position: relative; z-index: 2; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+  .glitch { font-size: clamp(2.5rem, 10vw, 6rem); font-weight: bold; letter-spacing: 0.15em; text-transform: uppercase; position: relative; animation: glitch 3s infinite; }
+  .glitch::before, .glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .glitch::before { color: #00f0ff; animation: glitch-1 2.5s infinite; clip-path: inset(0 0 60% 0); }
+  .glitch::after { color: #ff2d6a; animation: glitch-2 2.5s infinite; clip-path: inset(60% 0 0 0); }
+  @keyframes glitch { 0%, 90%, 100% { transform: translate(0); } 92% { transform: translate(-3px, 2px); } 94% { transform: translate(3px, -2px); } 96% { transform: translate(-2px, -1px); } 98% { transform: translate(2px, 1px); } }
+  @keyframes glitch-1 { 0%, 90%, 100% { transform: translate(0); } 92% { transform: translate(3px, -2px); } 94% { transform: translate(-3px, 2px); } }
+  @keyframes glitch-2 { 0%, 90%, 100% { transform: translate(0); } 92% { transform: translate(-3px, 1px); } 94% { transform: translate(3px, -1px); } }
+  .tagline { font-size: clamp(0.9rem, 2.5vw, 1.3rem); color: #00f0ff; letter-spacing: 0.4em; margin: 20px 0 40px; text-transform: uppercase; opacity: 0.9; }
+  .nav { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+  .btn { padding: 14px 36px; background: transparent; border: 2px solid #ff2d6a; color: #ff2d6a; font-family: inherit; font-size: 1rem; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
+  .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: #ff2d6a; transition: left 0.3s ease; z-index: -1; }
+  .btn:hover { color: #0a0000; box-shadow: 0 0 30px rgba(255,45,106,0.6); }
+  .btn:hover::before { left: 0; }
+  .btn.teal { border-color: #00f0ff; color: #00f0ff; }
+  .btn.teal::before { background: #00f0ff; }
+  .btn.teal:hover { color: #0a0000; box-shadow: 0 0 30px rgba(0,240,255,0.6); }
+  .scanline { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px); z-index: 3; pointer-events: none; }
+  .mute-hint { position: fixed; bottom: 20px; right: 20px; z-index: 4; color: rgba(255,45,106,0.5); font-size: 0.8rem; letter-spacing: 0.2em; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+  @media (max-width: 600px) { .nav { flex-direction: column; align-items: center; } .btn { width: 80%; } }
+</style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline poster="assets/poster.jpg">
+    <source src="assets/bg.mp4" type="video/mp4">
+  </video>
+  <img id="bg-fallback" src="assets/bg.gif" alt="background">
+  <div class="overlay"></div>
+  <div class="scanline"></div>
+  <div class="content">
+    <h1 class="glitch" data-text="Crimson Valentine">Crimson Valentine</h1>
+    <p class="tagline">Signal, Not Static</p>
+    <nav class="nav">
+      <a href="https://x.com/valentine10553" class="btn">Crimson</a>
+      <a href="https://www.youtube.com/@CrimsonDragonX7" class="btn teal">Redverse</a>
+      <a href="https://suno.com/@redstrucksolo550" class="btn">w-AI-fu!</a>
+    </nav>
+  </div>
+  <div class="mute-hint" id="mute-hint">click anywhere to unmute</div>
+  <audio id="bg-audio" loop>
+    <source src="assets/bg.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    const video = document.getElementById('bg-video');
+    const fallback = document.getElementById('bg-fallback');
+    const audio = document.getElementById('bg-audio');
+    const hint = document.getElementById('mute-hint');
+    video.addEventListener('error', () => { video.style.display = 'none'; fallback.style.display = 'block'; });
+    function unmute() {
+      audio.muted = false;
+      audio.play().catch(() => {});
+      hint.style.display = 'none';
+      document.removeEventListener('click', unmute);
+    }
+    document.addEventListener('click', unmute);
+    audio.play().catch(() => {});
+  </script>
+</body>
+</html>
