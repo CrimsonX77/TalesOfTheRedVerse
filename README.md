@@ -17,7 +17,7 @@ The genre, to the extent one applies: **Mythopunk** — the author's own term fo
 
 ---
 
-<img src="FallOfDragon/assets/1500x500.jpg" alt="Redverse visual" width="100%" />
+<img src="1500x500.jpg" alt="Redverse visual" width="100%" />
 
 ## The Stories
 
@@ -218,7 +218,7 @@ This repository is private. The Redverse is not yet ready for the world. But it 
 
 <img src="FallOfDragon/assets/og-image.jpg" alt="The Redverse lives" width="100%" />
 
-<img src="FallOfDragon/assets/generated_video.jpg" alt="Redverse cinematic" width="100%" />
+<img src="BloodCathedral.jpg" alt="Redverse cinematic" width="100%" />
 
 ---
 
